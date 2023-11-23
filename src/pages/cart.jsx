@@ -1,6 +1,6 @@
-import CartProduct from "../components/Cart_product/CartProduct ";
-import ResetCart from "../components/Cart_product/ResetCart ";
-import CartPayment from "../components/Payment/CartPayment ";
+import CartProduct from "../components/Cart_product/CartProduct";
+import ResetCart from "../components/Cart_product/ResetCart";
+import CartPayment from "../components/Payment/CartPayment";
 import Link from "next/link";
 import React from "react";
 import { useSelector } from "react-redux";
