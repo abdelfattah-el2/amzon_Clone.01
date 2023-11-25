@@ -31,7 +31,7 @@ export default function Produt({ product }) {
               <div
                 className=" absolute w-12 h-24 bottom-10 right-0
                 border-gray-400 border-[1px] bg-white rounded-md flex 
-                 flex-col translate-x-20 group-hover:translate-x-0 duration-300 transition-transform"
+                  flex-col translate-x-20 group-hover:translate-x-0 duration-300 transition-transform"
               >
                 <span
                   onClick={() =>
@@ -52,7 +52,7 @@ export default function Produt({ product }) {
                   }
                   className=" w-full h-full border-b-gray-400 border-b-[1px] flex 
                 items-center justify-center text-xl  bg-transparent
-                 hover:bg-amazon_yellow cursor-pointer duration-300"
+              hover:bg-amazon_yellow cursor-pointer duration-300"
                 >
                   <HiShoppingCart />
                 </span>
@@ -75,7 +75,7 @@ export default function Produt({ product }) {
                   }
                   className=" w-full h-full border-b-gray-400 border-b-[1px] flex 
                 items-center justify-center text-xl  bg-transparent
-                 hover:bg-amazon_yellow cursor-pointer duration-300"
+                hover:bg-amazon_yellow cursor-pointer duration-300"
                 >
                   <FaHeart />
                 </span>
@@ -83,7 +83,7 @@ export default function Produt({ product }) {
               {item.isNew && (
                 <p
                   className=" absolute  top-0 right-0  text-amazon_blue
-               animate-bounce  font-medium text-xs tracking-wide"
+                animate-bounce  font-medium text-xs tracking-wide"
                 >
                   !Save <FormattedPrice amout={item.oldPrice - item.price} />
                 </p>
@@ -122,7 +122,7 @@ export default function Produt({ product }) {
                   )
                 }
                 className=" h-10 font-medium bg-amazon_blue
-             hover:text-black text-white duration-300 mt-2 rounded-md hover:bg-amazon_yellow"
+              hover:text-black text-white duration-300 mt-2 rounded-md hover:bg-amazon_yellow"
               >
                 Add To Cart
               </button>

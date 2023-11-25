@@ -1,4 +1,4 @@
-import { resetCart } from "@/store/features/nextappSlice    ";
+import { resetCart } from "@/store/features/nextappSlice";
 import { useDispatch } from "react-redux";
 
 export default function ResetCart() {
@@ -7,8 +7,8 @@ export default function ResetCart() {
     const confimReast = window.confirm(
       "Are you sure to reset itmes from the cart ?"
     );
-    if(confimReast){
-        dispatch(resetCart())
+    if (confimReast) {
+      dispatch(resetCart());
     }
   };
   return (

@@ -1,4 +1,4 @@
-import { removeUser } from "@/store/features/nextappSlice    ";
+import { removeUser } from "@/store/features/nextappSlice";
 import { signOut } from "next-auth/react";
 import { LuMenu } from "react-icons/lu";
 import { useDispatch, useSelector } from "react-redux";

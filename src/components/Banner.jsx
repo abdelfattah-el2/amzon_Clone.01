@@ -7,8 +7,7 @@ import ImagThere from "../images/slider/sliderImg_3.jpg";
 import ImagFour from "../images/slider/sliderImg_4.jpg";
 export default function Banner() {
   return (
-    <div  className=" relative">
-      
+    <div className=" relative">
       <Carousel
         autoPlay
         infiniteLoop
@@ -16,7 +15,7 @@ export default function Banner() {
         showIndicators={false}
         showThumbs={false}
         interval={2300}
-       
+        
       >
         <div>
           <Image priority alt="imgbanneer" src={ImagOne} />
@@ -25,7 +24,7 @@ export default function Banner() {
           <Image priority alt="imgbanneer" src={ImagTwo} />
         </div>
         <div>
-          <Image  priority alt="imgbanneer" src={ImagThere} />
+          <Image priority alt="imgbanneer" src={ImagThere} />
         </div>
         <div>
           <Image priority alt="imgbanneer" src={ImagFour} />

@@ -7,7 +7,7 @@ import {
   decreasesQuantity,
   deleteProduct,
   increasesQuantity,
-} from "@/store/features/nextappSlice    ";
+} from "@/store/features/nextappSlice";
 
 export default function CartProduct({ item }) {
   const dispatch = useDispatch();

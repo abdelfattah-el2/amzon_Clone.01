@@ -15,7 +15,8 @@ export default function Footer() {
       duration-300 "
           href="https://www.amazon.ge/"
           target="_blank"
-        >@copy right
+        >
+          @copy right
         </a>
       </p>
     </div>

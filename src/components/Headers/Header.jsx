@@ -8,7 +8,7 @@ import { SlLocationPin } from "react-icons/sl";
 import { useDispatch, useSelector } from "react-redux";
 import { useSession, signOut, signIn } from "next-auth/react";
 import { useEffect } from "react";
-import { addUser } from "@/store/features/nextappSlice    ";
+import { addUser } from "@/store/features/nextappSlice";
 export default function Header() {
   const { data: session } = useSession();
   const { productData, favotiteData, userInfo } = useSelector(
@@ -104,7 +104,7 @@ export default function Header() {
             {favotiteData.length > 0 && (
               <span
                 className=" absolute right-2 top-2 w-4 h-4 border-[1px] border-gray-400 flex
-               items-center justify-center text-xs text-amazon_yellow"
+                items-center justify-center text-xs text-amazon_yellow"
               >
                 {favotiteData.length}
               </span>
@@ -115,7 +115,7 @@ export default function Header() {
         <Link
           href={"/cart"}
           className=" flex items-center duration-300 border px-2 h-[70%] border-transparent
-         hover:border-white  cursor-pointer relative "
+          hover:border-white  cursor-pointer relative "
         >
           <Image
             className=" w-auto object-cover h-8"

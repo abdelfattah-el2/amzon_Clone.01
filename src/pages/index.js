@@ -1,5 +1,5 @@
-import Banner from "@/components/Banner    ";
-import Produt from "@/components/Product/Product    ";
+import Banner from "@/components/Banner";
+import Produt from "@/components/Product/Product";
 
 export default function Home({ productData }) {
   return (
@@ -16,9 +16,11 @@ export default function Home({ productData }) {
 
 // ssr for data Fetching
 export async function getServerSideProps() {
-  const res = await fetch("https://fakestoreapiserver.reactbd.com/tech").catch((erro)=>{
-    console.log(erro);
-  })
+  const res = await fetch("https://fakestoreapiserver.reactbd.com/tech").catch(
+    (erro) => {
+      console.log(erro);
+    }
+  );
   const productData = await res.json();
   return { props: { productData } };
 }
