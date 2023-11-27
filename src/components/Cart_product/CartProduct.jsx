@@ -12,15 +12,15 @@ import {
 export default function CartProduct({ item }) {
   const dispatch = useDispatch();
   return (
-    <div className=" bg-gray-100 rounded-lg flex items-center gap-4">
+    <div className=" bg-gray-100 rounded-lg flex  md:flex-row flex-col items-center gap-1 xl:gap-4">
       <Image
-        className=" object-cover"
+        className="  w-[100px] xl:w-[150px] object-cover"
         src={item.image}
         alt="img-TO-product"
         width={150}
         height={150}
       />
-      <div className="flex items-center px-2 gap-4 ">
+      <div className="flex flex-col xl:flex-row items-center px-2 gap-1 xl:gap-4 ">
         <div className=" flex flex-col gap-1">
           <h1 className=" font-semibold text-lg text-amazon_blue">
             {item.title}
