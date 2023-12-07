@@ -15,7 +15,6 @@ export default function Banner() {
         showIndicators={false}
         showThumbs={false}
         interval={2300}
-        
       >
         <div>
           <Image priority alt="imgbanneer" src={ImagOne} />

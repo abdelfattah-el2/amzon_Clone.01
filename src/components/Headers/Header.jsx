@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useSession, signOut, signIn } from "next-auth/react";
 import { useEffect } from "react";
 import { addUser } from "@/store/features/nextappSlice";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 export default function Header() {
   const { data: session } = useSession();
   const { productData, favotiteData, userInfo } = useSelector(
@@ -53,7 +55,8 @@ export default function Header() {
             <p className=" text-white uppercase font-bold ">USA</p>
           </div>
         </div>
-        {/* SearchBar ⬇️ */}
+        <div className=" flex-1"></div>
+        {/* SearchBar ⬇️
         <div className=" flex-1 h-10  hidden md:inline-flex  items-center justify-between relative">
           <input
             className=" w-full h-full rounded-md px-2 placeholder:texy-sm 
@@ -64,7 +67,7 @@ export default function Header() {
           <span className="w-12 text-black text-2xl flex items-center justify-center absolute right-0 rounded-tr-md rounded-br-md h-full bg-amazon_yellow">
             <HiOutlineSearch />
           </span>
-        </div>
+        </div> */}
         {/* signIn ⬇️ */}
         {userInfo ? (
           <div className="flex items-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] gap-1">
@@ -75,7 +78,7 @@ export default function Header() {
             />
             <div className=" text-xs  text-gray-100 flex flex-col justify-between">
               <p className=" text-white font-bold">{userInfo.name}</p>
-              <p>{userInfo.email}</p>
+              {/* <p>{userInfo.email}</p> */}
             </div>
           </div>
         ) : (
@@ -94,23 +97,27 @@ export default function Header() {
           </div>
         )}
         {/* fovorit ⬇️ */}
-        <div
-          className="  text-xs text-gray-100 flex  flex-col justify-center border 
+      
+            <div
+              className="  text-xs text-gray-100 flex  flex-col justify-center border 
         border-transparent relative hover:border-white duration-300  cursor-pointer h-[70%] px-2  "
-        >
-          <p>Marked</p>
-          <p className=" text-white font-bold">& Favorite</p>
-          <span>
-            {favotiteData.length > 0 && (
-              <span
-                className=" absolute right-2 top-2 w-4 h-4 border-[1px] border-gray-400 flex
+            >
+              <p>Marked</p>
+              <p className=" text-white font-bold">& Favorite</p>
+              <span>
+                {favotiteData.length > 0 && (
+                  <span
+                    className=" absolute right-2 top-2 w-4 h-4 border-[1px] border-gray-400 flex
                 items-center justify-center text-xs text-amazon_yellow"
-              >
-                {favotiteData.length}
+                  >
+                    {favotiteData.length}
+                  </span>
+                )}
               </span>
-            )}
-          </span>
-        </div>
+            </div>
+         
+         
+
         {/* cart ⬇️ */}
         <Link
           href={"/cart"}
