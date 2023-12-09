@@ -2,6 +2,7 @@ import { SiMediamarkt } from "react-icons/si";
 import FormattedPrice from "../FormattedPrice";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function CartPayment() {
   const { productData, userInfo } = useSelector((state) => state.next);
@@ -36,9 +37,11 @@ export default function CartPayment() {
       </p>
       {userInfo ? (
         <div className=" flex flex-col items-center">
-          <button className="w-full h-10 text-sm font-semibold bg-amazon_blue text-white rounded-lg hover:bg-amazon_yellow hover:text-black duration-300">
-            Proceed To Buy
-          </button>
+          <Link href={"/Payment"}>
+            <button className="w-full h-10 text-sm font-semibold bg-amazon_blue text-white rounded-lg hover:bg-amazon_yellow hover:text-black duration-300">
+              Proceed To Buy
+            </button>
+          </Link>
         </div>
       ) : (
         <div className=" flex flex-col items-center">
