@@ -37,8 +37,8 @@ export default function CartPayment() {
       </p>
       {userInfo ? (
         <div className=" flex flex-col items-center">
-          <Link href={"/payment"}>
-            <button className="w-full h-10 text-sm font-semibold bg-amazon_blue text-white rounded-lg hover:bg-amazon_yellow hover:text-black duration-300">
+          <Link href={"/payment"} className="w-full h-10 text-sm font-semibold bg-amazon_blue text-white rounded-lg hover:bg-amazon_yellow hover:text-black duration-300">
+            <button >
               Proceed To Buy
             </button>
           </Link>
