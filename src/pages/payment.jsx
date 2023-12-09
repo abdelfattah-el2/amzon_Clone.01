@@ -6,6 +6,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
+import { resetCart } from "@/store/features/nextappSlice";
 
 export default function Payment() {
   const { productData, userInfo } = useSelector((state) => state.next);
@@ -13,6 +15,7 @@ export default function Payment() {
   const [payment, setPayment] = useState("visa");
   const [delivery, setDelivery] = useState(productData.length * 10);
   const dispatch = useDispatch();
+  const route = useRouter();
   useEffect(() => {
     let amt = 0;
     productData.map((item) => {
@@ -75,14 +78,6 @@ export default function Payment() {
       </div>
       <div className="p-6 px-10 bg-gray-100  flex-1">
         <div>
-          <h1 className=" text-gray-600 font-semibold mb-3">
-            Shipping address
-          </h1>
-          <input
-            className="p-2   w-full  outline-none border shadow-sm "
-            type="text"
-            placeholder="Your address"
-          />
           <div className=" mt-6">
             <h1 className="  text-gray-800 font-semibold mb-2">
               Payment information
@@ -140,32 +135,46 @@ export default function Payment() {
                 />
               </div>
             </div>
-            <div className=" text-gray-600 font-semibold mt-3">
-              <label className=" block">Card number</label>
-              <input
-                className="p-2  w-1/2  font-light placeholder:font-normal   my-1 outline-none border shadow-sm "
-                type="text"
-                placeholder="Your Card number"
-              />
-            </div>
-            <div className="text-gray-600 font-semibold mt-3 flex  gap-10 ">
-              <div>
-                <label className=" block">Expiration </label>
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+                route.push("/");
+                dispatch(resetCart());
+              }}
+            >
+              <div className=" text-gray-600 font-semibold mt-3">
+                <label className=" block">Card number</label>
                 <input
-                  className="p-2  w-full  font-light placeholder:font-normal   my-1 outline-none border shadow-sm "
+                  required
+                  className="p-2  w-1/2  font-light placeholder:font-normal   my-1 outline-none border shadow-sm "
                   type="text"
-                  placeholder="MM/YY"
+                  placeholder="Your Card number"
                 />
               </div>
-              <div>
-                <label className=" block">CVV </label>
-                <input
-                  className="p-2  w-full font-light placeholder:font-normal   my-1 outline-none border shadow-sm "
-                  type="text"
-                  placeholder="CVV"
-                />
+              <div className="text-gray-600 font-semibold mt-3 flex  gap-10 ">
+                <div>
+                  <label className=" block">Expiration </label>
+                  <input
+                    required
+                    className="p-2  w-full  font-light placeholder:font-normal   my-1 outline-none border shadow-sm "
+                    type="text"
+                    placeholder="MM/YY"
+                  />
+                </div>
+                <div>
+                  <label className=" block">CVV </label>
+                  <input
+                    required
+                    className="p-2  w-full font-light placeholder:font-normal   my-1 outline-none border shadow-sm "
+                    type="text"
+                    placeholder="CVV"
+                  />
+                </div>
               </div>
-            </div>
+              <button className=" mt-12 px-5 py-3 rounded-lg hover:bg-amazon_yellow bg-amazon_yellow/80 duration-300 font-semibold">
+                Confirm Payment
+              </button>
+            </form>
           </div>
         </div>
       </div>
