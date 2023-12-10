@@ -61,7 +61,7 @@ export default function BottomHeader() {
       {userInfo && (
         <button
           onClick={handleSignOut}
-          className=" hidden md:inline-flex items-center
+          className=" inline-flex items-center
         h-8 border border-transparent hover:border-red-600 text-amazon_yellow hover:text-red-400 duration-300  cursor-pointer px-2"
         >
           Sign Out

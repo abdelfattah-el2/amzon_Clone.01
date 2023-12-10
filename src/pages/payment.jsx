@@ -26,7 +26,7 @@ export default function Payment() {
     setTotalAmount(amt);
   }, [productData]);
   return (
-    <div className=" flex flex-col sm:flex-row container mx-auto px-4 gap-3 ">
+    <div className=" flex flex-col lg:flex-row container mx-auto px-4 gap-3 ">
       <div className=" flex-1 bg-gray-100 overflow-auto h-[100vh] ">
         <div className=" border-b-[1px] px-5  sticky top-0 bg-gray-100 flex justify-between text-xl border-amazon_light">
           <h1 className="  p-2  font-semibold">Product</h1>
@@ -82,7 +82,7 @@ export default function Payment() {
             <h1 className="  text-gray-800 font-semibold mb-2">
               Payment information
             </h1>
-            <div className=" flex w-1/2 gap-3 mt-4">
+            <div className=" flex w-full lg:w-1/2 gap-3 mt-4">
               <div
                 onClick={() => {
                   setPayment(payment !== "visa" ? "visa" : payment);
@@ -95,7 +95,7 @@ export default function Payment() {
               >
                 <Image
                   className=" object-cover"
-                  width={70}
+                  width={80}
                   src={visaImge}
                   alt="img"
                 />
@@ -112,7 +112,7 @@ export default function Payment() {
               >
                 <Image
                   className=" object-cover"
-                  width={70}
+                  width={80}
                   src={mastrCardImge}
                   alt="img"
                 />
@@ -129,7 +129,7 @@ export default function Payment() {
               >
                 <Image
                   className=" object-cover"
-                  width={70}
+                  width={80}
                   src={paypalImge}
                   alt="img"
                 />
@@ -146,7 +146,7 @@ export default function Payment() {
                 <label className=" block">Card number</label>
                 <input
                   required
-                  className="p-2  w-1/2  font-light placeholder:font-normal   my-1 outline-none border shadow-sm "
+                  className="p-2  w-full lg:w-1/2  font-light placeholder:font-normal   my-1 outline-none border shadow-sm "
                   type="text"
                   placeholder="Your Card number"
                 />
